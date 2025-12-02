@@ -1,16 +1,22 @@
-# SQL-Based Analytical Study of Netflix Content
+<img width="1280" height="720" alt="LOGO" src="https://github.com/user-attachments/assets/75f7cd52-9228-4790-b50d-8719ccd8f7e4" /># SQL-Based Analytical Study of Netflix Content
 
-![](https://github.com/najirh/netflix_sql_project/blob/main/logo.png)
+![](<img width="1280" height="720" alt="LOGO" src="https://github.com/user-attachments/assets/ef157dfd-eb35-4069-bbfd-f3ed40015e97" />)
 
-## Overview
-This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
+### Overview
 
-## Objectives
+This project presents an in-depth SQL-driven analysis of Netflix’s Movies and TV Shows dataset. The objective is to uncover meaningful insights about global content trends, audience preferences, release patterns, and metadata quality. By leveraging SQL queries, the project answers real business questions and highlights how streaming platforms can optimize their content strategy using data.
 
-- Analyze the distribution of content types (movies vs TV shows).
-- Identify the most common ratings for movies and TV shows.
-- List and analyze content based on release years, countries, and durations.
-- Explore and categorize content based on specific criteria and keywords.
+The analysis explores various dimensions such as content distribution, ratings, release timelines, country contributions, genre diversity, actor/director participation, and keyword-based content classification.
+
+###Objectives
+
+--Examine the distribution and growth trends of Netflix Movies and TV Shows.
+--Determine common industry ratings and identify patterns across content categories.
+--Analyze content based on release year, country of origin, duration, and genre.
+--Explore the involvement of popular actors and directors, including region-specific insights.
+--Identify metadata gaps, such as missing directors or incomplete entries.
+--Categorize and classify content based on themes, keywords, and description analysis.
+--Provide data-driven insights to support decision-making for content acquisition and curation.
 
 ## Dataset
 
