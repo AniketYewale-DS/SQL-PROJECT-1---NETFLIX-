@@ -58,42 +58,69 @@ CREATE TABLE netflix
 ### 1.Find the total number of titles added each year.
 
 ```sql
-SELECT YEAR(STR_TO_DATE(date_added, '%M %d, %Y')) AS year,
-       COUNT(*) AS total_titles
+SELECT 
+    EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) AS year,
+    COUNT(*) AS total_titles
 FROM netflix
-GROUP BY YEAR(STR_TO_DATE(date_added, '%M %d, %Y'))
-ORDER BY year DESC;
+GROUP BY 1
+ORDER BY year;
+
 ```
 **Objective:** To understand annual content growth on Netflix and identify trends in how content additions have increased or decreased over time.
 
 ### 2.Identify the month with the highest content additions
 ```sql
-SELECT MONTHNAME(STR_TO_DATE(date_added, '%M %d, %Y')) AS month,
-       COUNT(*) AS total_added
+SELECT 
+    TO_CHAR(TO_DATE(date_added, 'Month DD, YYYY'), 'Month') AS month,
+    COUNT(*) AS total_added
 FROM netflix
-GROUP BY MONTH(STR_TO_DATE(date_added, '%M %d, %Y'))
+GROUP BY month
 ORDER BY total_added DESC;
+
 ```
 **Objective:**  To analyze seasonal content upload patterns and determine which months see the most activity on the platform.
 
 ### 3.Top 5 directors with the most content
 ```sql
-SELECT director, COUNT(*) AS total_titles
+SELECT 
+    director,
+    COUNT(*) AS total_content
 FROM netflix
-WHERE director IS NOT NULL AND director != ''
+WHERE director IS NOT NULL AND director <> ''
 GROUP BY director
-ORDER BY total_titles DESC
+ORDER BY total_content DESC
 LIMIT 5;
 ```
 **Objective:**  To identify the most influential and frequently featured directors, revealing patterns in Netflix’s collaboration and content acquisition strategy.
 
 ### 4.Actors who appear together most often
 ```sql
-SELECT cast, COUNT(*) AS frequency
-FROM netflix
-WHERE cast IS NOT NULL AND cast != ''
-GROUP BY cast
-ORDER BY frequency DESC;
+WITH actor_list AS (
+    SELECT 
+        show_id,
+        UNNEST(STRING_TO_ARRAY(casts, ', ')) AS actor
+    FROM netflix
+    WHERE casts IS NOT NULL AND casts <> ''
+),
+actor_pairs AS (
+    SELECT 
+        a1.actor AS actor1,
+        a2.actor AS actor2
+    FROM actor_list a1
+    JOIN actor_list a2
+       ON a1.show_id = a2.show_id
+      AND a1.actor < a2.actor   -- avoid duplicates (A,B) and (B,A)
+)
+SELECT 
+    actor1,
+    actor2,
+    COUNT(*) AS appearances_together
+FROM actor_pairs
+GROUP BY actor1, actor2
+ORDER BY appearances_together DESC
+LIMIT 10;
+
+)
 ```
 **Objective:**  To discover common actor pairings and frequent collaborations, which can help understand casting trends and viewer-favorite combination
 
@@ -101,7 +128,7 @@ ORDER BY frequency DESC;
 ``sql
 SELECT *
 FROM netflix
-WHERE title LIKE '%Love%';
+WHERE title ILIKE '%love%';
 ``
 **Objective:** To filter and analyze content based on keywords, helping detect theme-based trends or the popularity of specific subjects (such as romance).
 
