@@ -13,18 +13,24 @@ The analysis explores various dimensions such as content distribution, ratings, 
 ### Objectives
 
 --Examine the distribution and growth trends of Netflix Movies and TV Shows.
+
 --Determine common industry ratings and identify patterns across content categories.
+
 --Analyze content based on release year, country of origin, duration, and genre.
+
 --Explore the involvement of popular actors and directors, including region-specific insights.
+
 --Identify metadata gaps, such as missing directors or incomplete entries.
+
 --Categorize and classify content based on themes, keywords, and description analysis.
+
 --Provide data-driven insights to support decision-making for content acquisition and curation.
 
 ## Dataset
 
 The data for this project is sourced from the Kaggle dataset:
 
-- **Dataset Link:** [Movies Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
+- **Dataset Link:** [Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
 
 ## Schema
 
