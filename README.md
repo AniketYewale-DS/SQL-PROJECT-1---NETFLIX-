@@ -1,8 +1,9 @@
 # SQL-Based Analytical Study of Netflix Content
 
 
+<img width="1280" height="720" alt="LOGO" src="https://github.com/user-attachments/assets/a6b09ce0-1f04-4522-ba28-15f8a363bc81" />
 
-![](<img width="1280" height="720" alt="LOGO" src="https://github.com/user-attachments/assets/ef157dfd-eb35-4069-bbfd-f3ed40015e97" />)
+
 
 ### Overview
 
