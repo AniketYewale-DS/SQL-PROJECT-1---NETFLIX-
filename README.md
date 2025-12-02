@@ -10,7 +10,7 @@ This project presents an in-depth SQL-driven analysis of Netflix’s Movies and 
 
 The analysis explores various dimensions such as content distribution, ratings, release timelines, country contributions, genre diversity, actor/director participation, and keyword-based content classification.
 
-###Objectives
+### Objectives
 
 --Examine the distribution and growth trends of Netflix Movies and TV Shows.
 --Determine common industry ratings and identify patterns across content categories.
