@@ -126,11 +126,11 @@ LIMIT 10;
 **Objective:**  To discover common actor pairings and frequent collaborations, which can help understand casting trends and viewer-favorite combination
 
 ### 5.List all titles containing the word "Love
-``sql
+```sql
 SELECT *
 FROM netflix
 WHERE title ILIKE '%love%';
-``
+```
 **Objective:** To filter and analyze content based on keywords, helping detect theme-based trends or the popularity of specific subjects (such as romance).
 
 ### 6. Count the Number of Movies vs TV Shows
